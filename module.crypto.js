@@ -34,20 +34,19 @@ var fs = require('fs');
 
 var data = {password:password, output:output, cipheredOutput:cipheredOutput};
 
-fs.writeFile('password.txt', JSON.stringify(data),
-	'utf8', function(err) {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log('write completed');
-			fs.readFile('password.txt', 'utf8', function(err,data) {
-				if (err) {
-					console.log(err);
-				}
-				else {
-					console.log('data='+data);
-				}
-			});
-		}
+fs.writeFile('password.txt', JSON.stringify(data), 'utf8', function(err) {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log('write completed');
+		fs.readFile('password.txt', 'utf8', function(err,data) {
+			if (err) {
+				console.log(err);
+			}
+			else {
+				console.log('data='+data);
+			}
+		});
+	}
 });
 
