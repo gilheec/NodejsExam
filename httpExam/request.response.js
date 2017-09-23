@@ -2,6 +2,7 @@ var http = require('http');
 var fs = require('fs');
 var ejs = require('ejs');
 var jade = require('jade');
+
 http.createServer(function(req,res){
 	if (req.method == 'GET') {
 		console.log(req.url+" GET");
