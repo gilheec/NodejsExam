@@ -5,6 +5,10 @@ var app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname+'/public'));
 
+// 크로스도메일 이슈 대응 (cors)
+var cors = require('cors')();
+app.use(cors);
+
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
